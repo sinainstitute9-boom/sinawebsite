@@ -1,3 +1,4 @@
+"use client";
 import { client } from "../../../../sanity/lib/client";
 import { jobBySlugQuery } from "../../../../sanity/lib/queries";
 import Navbar from "../../../components/NavBar";
@@ -5,12 +6,21 @@ import Footer from "../../../components/Footer";
 import WhatsAppButton from "../../../components/WhatsAppButton";
 import { useState } from "react";
 
+import JobApplyClient from "./JobApplyClient";
+
 export default async function JobApplyPage({ params }) {
   const job = await client.fetch(jobBySlugQuery(params.slug));
 
-  if (!job) return <p className="text-center mt-20 text-[#074166] font-semibold">Job not found</p>;
+  if (!job) {
+    return (
+      <p className="text-center mt-20 text-[#074166] font-semibold">
+        Job not found
+      </p>
+    );
+  }
 
-  return (
+  return <JobApplyClient job={job} />;
+}
     <div className="bg-gray-100 min-h-screen">
       <Navbar />
 

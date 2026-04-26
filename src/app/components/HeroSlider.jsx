@@ -6,38 +6,38 @@ import Link from "next/link"
 
 export default function HeroSlider() {
 
-  const slides = [
-    {
-      image: "/images/slide1.png",
-      title: "Empowering The Future With",
-      highlight: "Artificial Intelligence",
-      desc: "Professional IT Education & Global Certifications"
-    },
-    {
-      image: "/images/slide2.png",
-      title: "Master Modern",
-      highlight: "Web Development",
-      desc: "Frontend, Backend & Full Stack Training"
-    },
-    {
-      image: "/images/slide3.png",
-      title: "Become A Professional",
-      highlight: "Data Analyst",
-      desc: "Learn Analytics, BI & Machine Learning"
-    },
-    {
-      image: "/images/slide4.png",
-      title: "Industry Focused",
-      highlight: "Mentorship",
-      desc: "Learn Directly From Experts"
-    },
-     {
-      image: "/images/slide4.png",
-      title: "Industry Focused",
-      highlight: "Mentorship",
-      desc: "Learn Directly From Experts"
-    }
-  ]
+const slides = [
+  {
+    image: "/images/slide1.png",
+    title: "Empowering The Future With",
+    highlight: "Artificial Intelligence",
+    desc: "Industry-Level Training with Real-World Applications"
+  },
+{
+  image: "/images/slide2.png",
+  title: "Start Your Career In",
+  highlight: "CCNA Networking",
+  desc: "Learn Routing, Switching & Real Network Configuration"
+},
+  {
+    image: "/images/slide3.png",
+    title: "Become A Professional",
+    highlight: "Data Analytics",
+    desc: "Learn BI Tools, Data Visualization & Decision Making"
+  },
+  {
+    image: "/images/slide4.png",
+    title: "Master Industrial Automation",
+    highlight: "PLC Programming",
+    desc: "Practical Training on Real Industrial Systems"
+  }
+  // {
+  //   image: "/images/slide5.png",
+  //   title: "Build Your Career In",
+  //   highlight: "Networking & Fiber Optics",
+  //   desc: "CCNA, Routing, Switching & Fiber Communication Skills"
+  // }
+]
 
   const [index, setIndex] = useState(0)
   const intervalRef = useRef(null)

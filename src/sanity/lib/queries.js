@@ -106,10 +106,18 @@ export const singleCourseQuery = `
   thumbnail,
   description,
   benefits,
+  whoIsFor,
   outline,
   instructor->{
     name,
     image
+  },
+  seo{
+    metaTitle,
+    metaDescription,
+    keywords,
+    noIndex,
+    ogImage
   }
 }
 `;
@@ -121,7 +129,7 @@ export const singleServiceQuery = `
   slug,
   shortDescription,
   description,
-  image
+  image,
 }
 `;
 // export const singleCourseQuery = `
@@ -149,7 +157,7 @@ export const servicesQuery = `*[_type == "service"]{
   title,
   slug,
   shortDescription,
-  image
+  image,
 }`
 ;
 export const scheduleQuery = `*[_type == "classSchedule"]{
@@ -160,7 +168,7 @@ export const scheduleQuery = `*[_type == "classSchedule"]{
   start,
   end,
   room,
-  color
+  color,
 }`
 ;
 // All courses
@@ -168,17 +176,17 @@ export const allFeeStructuresQuery = `*[_type == "feeStructure"]{
   title,
   slug,
   fee,
-  duration
+  duration,
 }`
 
 // Single course by slug
-export const feeStructureBySlugQuery = (slug) => `*[_type == "feeStructure" && slug.current == "${slug}"][0]{
-  title,
-  fee,
-  duration,
-  description
-}`
-;
+// export const feeStructureBySlugQuery = (slug) => `*[_type == "feeStructure" && slug.current == "${slug}"][0]{
+//   title,
+//   fee,
+//   duration,
+//   description
+// }`
+
 // sanity/queries.js
 export const seminarsQuery = `*[_type == "seminar"] | order(date desc){
   _id,
@@ -189,7 +197,7 @@ export const seminarsQuery = `*[_type == "seminar"] | order(date desc){
   location,
   youtube,
   coverImage,
-  upcoming
+  upcoming,
 }`
 ;
 export const singleSeminarQuery = `
@@ -200,12 +208,12 @@ export const singleSeminarQuery = `
   location,
   description,
   youtube,
-  images
+  images,
 }`
 ;
 export const upcomingSeminarsQuery = `*[_type == "seminar" && upcoming == true]{
   title,
-  date
+  date,
 }`
 ;
 export const galleryQuery = `*[_type == "gallery"]{
@@ -214,14 +222,14 @@ export const galleryQuery = `*[_type == "gallery"]{
   slug,
   department,
   description,
-  coverImage
+  coverImage,
 }`
 ;
 export const singleGalleryQuery = `*[_type == "gallery" && slug.current == $slug][0]{
   title,
   department,
   description,
-  images
+  images,
 }`
 ;
 export const registrationBySlug = `
@@ -238,7 +246,7 @@ export const registrationBySlug = `
   whatsapp,
   academics,
   experience,
-  comments
+  comments,
 }
 `
 
@@ -257,10 +265,7 @@ export const jobsQuery = `*[_type == "job"] | order(_createdAt desc){
   title, slug, description, requirements, location, applyLink
 }`;
 
-export const jobBySlugQuery = (slug) => `*[_type=="job" && slug.current=="${slug}"][0]{
-  title, description, requirements, location, applyLink
-}`
-;
+
 export const blogsQuery = `*[_type in ["blog", "post"]] | order(publishedAt desc){
   title,
   slug,
@@ -268,8 +273,22 @@ export const blogsQuery = `*[_type in ["blog", "post"]] | order(publishedAt desc
   body,
   thumbnail,
   mainImage,
-  publishedAt
+  publishedAt,
 }`;
+export const feeStructureBySlugQuery = `
+  *[_type == "feeStructure" && slug.current == $slug][0]{
+    title,
+    fee,
+    duration,
+    description,
+  }
+`
+
+export const jobBySlugQuery = `
+  *[_type == "job" && slug.current == $slug][0]{
+    title, description, requirements, location, applyLink
+  }
+`
 
 export const blogBySlugQuery = (slug) => `*[_type in ["blog", "post"] && slug.current=="${slug}"][0]{
   title,
@@ -277,7 +296,7 @@ export const blogBySlugQuery = (slug) => `*[_type in ["blog", "post"] && slug.cu
   body,
   thumbnail,
   mainImage,
-  publishedAt
+  publishedAt,
 }`;
 // lib/queries.js
 export const getActiveAnnouncementsQuery = `
@@ -286,6 +305,65 @@ export const getActiveAnnouncementsQuery = `
     text,
     link,
     backgroundColor,
-    textColor
+    textColor,
   }
 `;
+export const getHomePageQuery = `*[_type == "homePage"][0]{
+  aboutTitle,
+  "aboutImageUrl": aboutImage.asset->url,
+  aboutDescription1,
+  aboutDescription2,
+  aboutDescription3,
+  contactEmail,
+  contactPhone,
+  contactDescription,
+}`
+
+export const getCourseCategoriesQuery = `*[_type == "courseCategory"] | order(order asc) {
+  title,
+  order,
+  courses[]{
+    name,
+    "imageUrl": image.asset->url,
+    link,
+    description,
+  }
+}`
+;
+export const getCoursesByCategoryQuery = `
+*[_type == "course"] | order(title asc) {
+  title,
+  category,
+  "imageUrl": thumbnail.asset->url,
+  slug
+}
+`;
+// export const getCoursesByCategoryQuery = `
+// {
+//   "itSoftware": *[_type == "course" && category == "it-software"] | order(title asc) {
+//     title,
+//     "imageUrl": thumbnail.asset->url,
+//     slug
+//   },
+//   "networking": *[_type == "course" && category == "networking-cyber"] | order(title asc) {
+//     title,
+//     "imageUrl": thumbnail.asset->url,
+//     slug
+//   },
+//   "engineering": *[_type == "course" && category == "engineering-technical"] | order(title asc) {
+//     title,
+//     "imageUrl": thumbnail.asset->url,
+//     slug
+//   },
+//   "business": *[_type == "course" && category == "business-finance"] | order(title asc) {
+//     title,
+//     "imageUrl": thumbnail.asset->url,
+//     slug
+//   },
+//   "language": *[_type == "course" && category == "language-professional"] | order(title asc) {
+//     title,
+//     "imageUrl": thumbnail.asset->url,
+//     slug
+//   }
+// }
+// `

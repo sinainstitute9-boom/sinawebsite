@@ -387,26 +387,19 @@ export default function CoursePage({ course }) {
           )}
 
 
-          {/* WHO THIS COURSE IS FOR */}
-          {course.benefits?.length > 0 && (
-
-            <div className="bg-white mt-8 p-8 rounded-lg shadow">
-
-              <h2 className="text-2xl font-semibold text-[#074166] mb-4">
-                Who this course is for
-              </h2>
-
-              <ul className="list-disc ml-6 text-gray-600 space-y-2">
-
-                {course.benefits.map((b, i) => (
-                  <li key={i}>{b}</li>
-                ))}
-
-              </ul>
-
-            </div>
-
-          )}
+         {/* BOTTOM - Who this course is for */}
+{course.whoIsFor?.length > 0 && (
+  <div className="bg-white mt-8 p-8 rounded-lg shadow">
+    <h2 className="text-2xl font-semibold text-[#074166] mb-4">
+      Who this course is for
+    </h2>
+    <ul className="list-disc ml-6 text-gray-600 space-y-2">
+      {course.whoIsFor.map((b, i) => (
+        <li key={i}>{b}</li>
+      ))}
+    </ul>
+  </div>
+)}
 
         </div>
 

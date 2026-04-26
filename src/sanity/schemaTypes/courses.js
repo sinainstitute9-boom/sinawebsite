@@ -113,7 +113,13 @@ export default {
       type: "array",
       of: [{ type: "string" }],
     },
-
+{
+  name: 'whoIsFor',
+  title: 'Who This Course Is For',
+  type: 'array',
+  of: [{ type: 'string' }],
+  description: 'Neeche wala section'
+},
     // 🔥 COURSE OUTLINE
     {
       name: "outline",

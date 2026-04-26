@@ -12,6 +12,7 @@ import faq from "./faq"
 import job from "./job"
 import blog from "./blog"
 import announcement from "./announcement"
+import homePage from "./homePage"
 import { b, jo } from "sanity/lib/_chunks-dts/ActiveWorkspaceMatcherContext"
 
 
@@ -29,5 +30,7 @@ export const schemaTypes = [
   faq,
   job,
   blog,
-  announcement
+  announcement,
+  homePage
+
 ]

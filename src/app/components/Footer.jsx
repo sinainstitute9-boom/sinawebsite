@@ -46,7 +46,7 @@ export default function Footer() {
             <a href="https://www.youtube.com/@synergyinstitute10" className="bg-[#fbae1a] p-2 rounded-full text-[#074166] hover:scale-110 transition">
               <FaYoutube size={14} />
             </a>
-            <a href="https://www.pinterest.com/sinainstitute1/" className="bg-[#fbae1a] p-2 rounded-full text-[#074166] hover:scale-110 transition">
+            <a href="https://www.pinterest.com/sinainstitute9/" className="bg-[#fbae1a] p-2 rounded-full text-[#074166] hover:scale-110 transition">
               <FaPinterest size={14} />
             </a>
           </div>
@@ -60,8 +60,8 @@ export default function Footer() {
           <ul className="space-y-2 text-gray-300 text-sm">
             <li><a href="/faq" className="hover:text-[#fbae1a] transition">FAQs</a></li>
             <li><a href="/admissions" className="hover:text-[#fbae1a] transition">Admissions</a></li>
-            <li><a href="/online-it-training" className="hover:text-[#fbae1a] transition">Online IT Training</a></li>
-            <li><a href="/class-schedule" className="hover:text-[#fbae1a] transition">Class Schedule</a></li>
+            {/* <li><a href="/online-it-training" className="hover:text-[#fbae1a] transition">Online IT Training</a></li> */}
+            {/* <li><a href="/class-schedule" className="hover:text-[#fbae1a] transition">Class Schedule</a></li> */}
             <li><a href="/job" className="hover:text-[#fbae1a] transition">Job Opportunities</a></li>
             <li><a href="/blog" className="hover:text-[#fbae1a] transition">Blog</a></li>
           </ul>
@@ -93,12 +93,12 @@ export default function Footer() {
 
           <p className="flex items-center gap-2 text-gray-300 text-sm mb-3">
             <MdEmail className="text-[#fbae1a]" />
-            info@sinainstitute.com
+            info@sinainstitute.com.pk
           </p>
 
           <p className="flex items-center gap-2 text-gray-300 text-sm">
             <MdPhone className="text-[#fbae1a]" />
-            +92 300 1234567
+            +92 3203400111
           </p>
         </div>
       </div>
