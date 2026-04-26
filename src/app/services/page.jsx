@@ -30,11 +30,9 @@ export default function ServicesPage() {
           src="/images/services.png"
           alt="courses hero"
           className="w-screen h-full object-contain opacity-90"></img>
-
-        <h1 className="text-5xl font-bold text-[#074166] mt-20">
-       
-          Professional IT training & Technology Solutions
-        </h1>
+<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#074166] mt-12 md:mt-20">
+  Professional IT training & Technology Solutions
+</h1>
 
       </section>
 

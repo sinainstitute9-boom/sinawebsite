@@ -89,6 +89,21 @@
 @keyframes slideOut {
   from { opacity: 1; transform: translateX(0); }
   to   { opacity: 0; transform: translateX(80px); }
+
+}
+.fc-event {
+  background-color: #074166 !important;
+  border-color: #074166 !important;
+  color: white !important;
+}
+
+.fc-event-title {
+  color: white !important;
+}
+
+.fc-daygrid-event {
+  background-color: #074166 !important;
+  border: none !important;
 }
 
 /* ── FullCalendar Overrides ──

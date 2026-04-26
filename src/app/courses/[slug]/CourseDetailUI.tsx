@@ -439,10 +439,9 @@ export default function CoursePage({ course }) {
 
             </ul>
 
-            <button className="mt-6 w-full bg-[#fdad1b] text-[#074166] py-3 rounded font-semibold hover:opacity-90 transition">
-              Enroll Now
-              <Link href="/enrollnow" className="ml-2 font-bold">→</Link>
-            </button>
+          <Link href="/book-query" className="mt-6 w-full bg-[#fdad1b] text-[#074166] py-3 rounded font-semibold hover:opacity-90 transition block text-center">
+  Enroll Now →
+</Link>
 
           </div>
 

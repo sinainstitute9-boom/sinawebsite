@@ -252,7 +252,7 @@ export const registrationBySlug = `
 
 export const allRegistrationSlugs = `
 *[_type == "registration" && defined(slug.current)][].slug.current
-}`;
+`;
 
 // sanity/lib/queries.js
 export const faqQuery = `*[_type == "faq"] | order(category asc) {

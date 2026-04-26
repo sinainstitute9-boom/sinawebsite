@@ -215,6 +215,7 @@ import { notFound } from "next/navigation";
 import Navbar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import WhatsAppButton from "../../components/WhatsAppButton";
+import Link from "next/link";
 
 export const revalidate = 3600;
 
@@ -304,13 +305,15 @@ export default async function MentorDetail({ params }: PageProps) {
             {/* BUTTONS */}
             <div className="mt-8 flex gap-4">
 
-              <button className="bg-[#fdad1b] text-[#074166] px-6 py-3 rounded-full font-semibold hover:scale-105 transition">
-                Ask a Question
-              </button>
-
-              <button className="border-2 border-[#074166] text-[#074166] px-6 py-3 rounded-full font-semibold hover:bg-[#074166] hover:text-white transition">
+              {/* <button className="bg-[#fdad1b] text-[#074166] px-6 py-3 rounded-full font-semibold hover:scale-105 transition">
                 Enroll Now
-              </button>
+              </button> */}
+              <Link href="/book-query" className="bg-[#fdad1b] text-[#074166] px-6 py-3 rounded-full font-semibold hover:scale-105 transition">
+  Enroll Now →</Link>
+
+              {/* <button className="border-2 border-[#074166] text-[#074166] px-6 py-3 rounded-full font-semibold hover:bg-[#074166] hover:text-white transition">
+                Enroll Now
+              </button> */}
 
             </div>
 

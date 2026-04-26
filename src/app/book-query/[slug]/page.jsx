@@ -1,7 +1,8 @@
-import { client } from "@/sanity/lib/client"
-import { registrationBySlug, allRegistrationSlugs } from "@/sanity/lib/queries"
-import Navbar from "@/components/NavBar"
-import Footer from "@/components/Footer"
+import { client } from "../../../sanity/lib/client"
+import { registrationBySlug, allRegistrationSlugs } from "../../../sanity/lib/queries"
+import Navbar from "../../components/NavBar"
+import Footer from "../../components/Footer"
+
 
 export async function generateStaticParams() {
   const slugs = await client.fetch(allRegistrationSlugs)
