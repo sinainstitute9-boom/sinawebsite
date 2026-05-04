@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "SINA Institute",
+  title: "SINA",
   description: "Professional IT Training & Technology Solutions",
   icons: {
     icon: "/favicon.ico",
