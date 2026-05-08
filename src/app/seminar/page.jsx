@@ -905,10 +905,10 @@ export default function SeminarsPage(){
               <img
                 src={
                   item.coverImage
-                    ? urlFor(item.coverImage).width(600).height(400).url()
+                    ? urlFor(item.coverImage).width(800).height(400).url()
                     : "/placeholder.jpg"
                 }
-                className="w-full h-60 object-cover"
+                className="w-full h-auto"
               />
 
               <div className="p-6 text-center">
