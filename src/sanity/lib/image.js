@@ -11,11 +11,27 @@
 
 
 
+// import imageUrlBuilder from "@sanity/image-url";
+// import { client } from "./client";
+
+// const builder = imageUrlBuilder(client);
+
+// export function urlFor(source) {
+//   return builder.image(source);
+// }
+
+
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "./client";
 
 const builder = imageUrlBuilder(client);
 
 export function urlFor(source) {
+  if (!source || !source.asset) {
+    return {
+      width: () => ({ url: () => "/placeholder.jpg" }),
+      url: () => "/placeholder.jpg"
+    }
+  }
   return builder.image(source);
 }
