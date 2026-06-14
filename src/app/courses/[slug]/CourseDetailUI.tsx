@@ -295,11 +295,27 @@ import WhatsAppButton from "../../components/WhatsAppButton";
 
 import Link from "next/link";
 
-function buildImageUrl(source, width, height) {
+// function buildImageUrl(source, width, height) {
+//   if (!source) return null;
+//   let img = urlFor(source);
+//   if (width) img = img.width(width);
+//   if (height) img = img.height(height);
+//   return img.url();
+// }
+
+function imageUrl(source: any, width?: number, height?: number) {
   if (!source) return null;
-  let img = urlFor(source);
-  if (width) img = img.width(width);
-  if (height) img = img.height(height);
+
+  const img = urlFor(source);
+
+  if (width && typeof img.width === "function") {
+    img.width(width);
+  }
+
+  if (height && typeof img.height === "function") {
+    img.height(height);
+  }
+
   return img.url();
 }
 
